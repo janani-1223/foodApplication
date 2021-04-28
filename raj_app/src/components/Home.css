@@ -4,4 +4,6 @@
 .search-container {
     float: right;
   }
-  
+  .bs-example{
+    margin: 20px;
+}

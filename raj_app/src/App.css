@@ -27,6 +27,53 @@
 .App-link {
   color: #61dafb;
 }
+.button {
+  padding: 10px 20px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  /* background-color: #012a4a; */
+  background-color: #131012c9;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+}
+.button:hover {
+  background-color: #a4d2e6;
+}
+label {
+  font-weight: bold;
+}
+.button:active {
+  background-color: #5188a1;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.center{
+  margin:auto;
+  margin:left;
+}
+
+button.button.cancel {
+  background-color: rgb(177, 17, 17);
+  margin-left: 90px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+}
+
+.card.col-md-6.offset-md-3.card {
+  border: 2px solid;
+  align-items: center;
+  padding: 20px;
+}
+.formbtn {
+  margin-left: 30px;
+  padding: 10px 10px;
+  width: 100px;
+}
 
 @keyframes App-logo-spin {
   from {

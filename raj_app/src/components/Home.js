@@ -21,7 +21,7 @@ class Home extends Component {
       <a class="nav-link" href="/login" >Login</a>
     </li>&nbsp;&nbsp;
     <li class="nav-item">
-      <a class="nav-link" href="/signup">Sign Up</a>
+      <a class="nav-link" href="/sign-up">Sign Up</a>
     </li>
   </ul>
   </nav>

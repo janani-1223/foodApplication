@@ -8,9 +8,16 @@ class Admin extends Component {
         this.state={
             admin:[],
             mailId:this.props.match.params.mailId,
+
+            // showChangePassword: false,
         };
+        // this.onClickShow = this.onClickShow.bind(this);
         
     }
+    // onClickShow(){
+    //     this.props.history.push('/forgotPassword');
+    // }
+
     view(mailId){
         this.props.history.push(`/view-admin/${mailId}`);
     }
@@ -69,7 +76,8 @@ class Admin extends Component {
                            <td>{ad.phoneNo}</td>
                            <td>
                                <div className="actions">
-                                   <button id="margin" onClick={()=>this.edit(ad.mailId)} class="button">Update</button>
+                               {/* <button className="margin" onClick={this.onClickShow} class="button">Update</button> */}
+                       
                                </div>
                            </td>
                            <td>

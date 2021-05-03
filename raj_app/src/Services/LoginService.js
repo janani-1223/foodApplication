@@ -18,5 +18,9 @@ class LoginSevice{
     createAccount(login,phoneNo){
         return axios.post(BASE_URL +"add-login/",login,phoneNo);
     }
+
+    resetPassword(login){
+        return axios.post(BASE_URL + "reset", login);
+    }
 }
 export default new LoginSevice();

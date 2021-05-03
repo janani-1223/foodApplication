@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginService from '../Services/LoginService';
-
+import {Link} from "react-router-dom";
 class ViewAdmin extends Component {
     constructor(props){
         super(props);
@@ -8,6 +8,7 @@ class ViewAdmin extends Component {
             mailId:this.props.match.params.mailId,
            admin:{},
         };
+       
     }
 
     componentDidMount(){
@@ -15,6 +16,8 @@ class ViewAdmin extends Component {
             this.setState({admin:res.data});
         });
     }
+
+      
 
     cancel(){
         if(this.state.admin.role==="admin"){
@@ -47,7 +50,9 @@ class ViewAdmin extends Component {
                             <label>Phone No:</label>&nbsp;&nbsp;
                             <div>{this.state.admin.phoneNo}</div>
                         </div>
-                        <button id="margin" onClick={()=>this.edit(this.state.admin.mailId)} class="button">Update</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       
+                        {/* <button className="margin" onClick={this.onClickShow} class="button">Update</button> */}
+              
                         <button className="button cancel" onClick={this.cancel.bind(this)}>Cancel</button>
                     </div>
                 </div>

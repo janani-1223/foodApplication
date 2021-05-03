@@ -13,6 +13,8 @@ import Customer from './components/Customer';
 import Register from './components/Register';
 import ViewAdmin from './components/ViewAdmin';
 import ListAdmin from './components/ListAdmin';
+import ForgetPassword from './components/ForgetPassword';
+
 
 
 function App() {
@@ -27,7 +29,8 @@ function App() {
       <Route path="/admin/:mailId" component={Admin} />
       <Route path="/customer/:mailId" component={Customer} />
       <Route path="/list-customer" component={ListAdmin} />
-
+      <Route path="/forgotPassword" component={ForgetPassword} />
+      
       </Switch>
       </Router>
   );

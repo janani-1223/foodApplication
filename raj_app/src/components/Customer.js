@@ -6,9 +6,45 @@ class Customer extends Component {
         this.state={
             admin:[],
             mailId:this.props.match.params.mailId,
+            quantity: 1,
+            show: true,
+            max:5,
+            min:0
         };
         
     }
+
+    IncrementItem = () => {
+        this.setState(prevState => {
+          if(prevState.quantity < 9) {
+            return {
+              quantity: prevState.quantity + 1
+            }
+          } else {
+            return null;
+          }
+        });
+    }
+    DecreaseItem = () => {
+      this.setState(prevState => {
+        if(prevState.quantity > 0) {
+          return {
+            quantity: prevState.quantity - 1
+          }
+        } else {
+          return null;
+        }
+      });
+    }
+    ToggleClick = () => {
+      this.setState({
+        show: !this.state.show
+      });
+    }
+    handleChange = (event) => {
+      this.setState({quantity: event.target.value});
+    }
+    
     render() {
         return (
             <div>
@@ -29,6 +65,7 @@ class Customer extends Component {
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href={`/view-admin/${this.state.mailId}`} class="dropdown-item">My Profile</a>
+                        <a href={'/view-order/${this.state.orderId}'} class="dropdown-item">My Orders</a>
                         <div class="dropdown-divider"></div>
                         <a href="/"class="dropdown-item">Logout</a>
                     </div>
@@ -36,8 +73,21 @@ class Customer extends Component {
             </ul>
  
   </nav>
-        
-            </div>
+  <br></br>
+  
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKJpSaaE0Dc3n05PHEgwKt8OtGzF9_HOAIpQ&usqp=CAU" class="rounded float-left" alt="chicken biryani"></img>
+<br></br>
+<div>
+<label>Quantity:</label>
+<br></br>
+  <button onClick={this.IncrementItem}>+</button>
+      <input className="inputne" value={this.state.quantity} onChange={this.handleChange}/>
+      <button onClick = {this.DecreaseItem}>-</button>
+      </div>
+    </div>
+           
+            
+          
         );
     }
 }
